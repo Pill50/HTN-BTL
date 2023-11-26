@@ -7,7 +7,7 @@ export function ActivityContext({ children }) {
   const { userDbId } = React.useContext(AuthenticationAPI);
   const getActivities = () => {
     if (userDbId != "") {
-      fetch("http://192.168.1.12:3333/getactivities", {
+      fetch("http://192.168.1.28:3333/getactivities", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

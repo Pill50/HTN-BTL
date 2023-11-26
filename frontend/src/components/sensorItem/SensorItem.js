@@ -45,7 +45,7 @@ export default function SensorItem(props) {
   };
 
   const handleAddSensor = () => {
-    fetch("http://192.168.1.12:3333/addsensor", {
+    fetch("http://192.168.1.28:3333/addsensor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export default function SensorItem(props) {
   };
 
   const handleChangeSensor = () => {
-    fetch("http://192.168.1.12:3333/changesensor", {
+    fetch("http://192.168.1.28:3333/changesensor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,7 +104,7 @@ export default function SensorItem(props) {
   };
 
   const deleteSensor = () => {
-    fetch("http://192.168.1.12:3333/deletesensor", {
+    fetch("http://192.168.1.28:3333/deletesensor", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

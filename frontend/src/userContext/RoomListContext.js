@@ -6,7 +6,7 @@ export function RoomListContext({ children }) {
   const { userDbId } = React.useContext(AuthenticationAPI);
   const getRooms = () => {
     if (userDbId != "") {
-      fetch("http://192.168.1.12:3333/getrooms", {
+      fetch("http://192.168.1.28:3333/getrooms", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

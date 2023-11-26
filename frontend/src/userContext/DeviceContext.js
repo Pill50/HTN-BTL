@@ -6,7 +6,7 @@ export function DeviceContext({ children }) {
   const { userDbId } = React.useContext(AuthenticationAPI);
   const getDevices = () => {
     if (userDbId != "") {
-      fetch("http://192.168.1.12:3333/getdevices", {
+      fetch("http://192.168.1.28:3333/getdevices", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

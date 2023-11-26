@@ -38,7 +38,7 @@ function State({ route }) {
             deviceElement.deviceType == "fan" &&
             Number(mes.slice(mes.indexOf("TEMP") + 6, mes.indexOf(',"HUMID'))) <= Number(deviceElement.offSensor)
           ) {
-            fetch("http://192.168.1.12:3333/changedevice2", {
+            fetch("http://192.168.1.28:3333/changedevice2", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -74,7 +74,7 @@ function State({ route }) {
             deviceElement.deviceType == "bulb" &&
             Number(mes.slice(mes.indexOf("LIGHT") + 7, mes.indexOf(',"RELAY'))) >= Number(deviceElement.offSensor)
           ) {
-            fetch("http://192.168.1.12:3333/changedevice2", {
+            fetch("http://192.168.1.28:3333/changedevice2", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -112,7 +112,7 @@ function State({ route }) {
             deviceElement.deviceType == "fan" &&
             Number(mes.slice(mes.indexOf("TEMP") + 6, mes.indexOf(',"HUMID'))) >= Number(deviceElement.onSensor)
           ) {
-            fetch("http://192.168.1.12:3333/changedevice2", {
+            fetch("http://192.168.1.28:3333/changedevice2", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -148,7 +148,7 @@ function State({ route }) {
             deviceElement.deviceType == "bulb" &&
             Number(mes.slice(mes.indexOf("LIGHT") + 7, mes.indexOf(',"RELAY'))) <= Number(deviceElement.onSensor)
           ) {
-            fetch("http://192.168.1.12:3333/changedevice2", {
+            fetch("http://192.168.1.28:3333/changedevice2", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -192,7 +192,7 @@ function State({ route }) {
     // Lấy dữ liệu từ thiết bị 0
     if (message.slice(message.indexOf("RELAY_0") + 9, message.indexOf(',"RELAY_1')) == "true") {
       if (firstDevice[0] && firstDevice[0].state == "off") {
-        fetch("http://192.168.1.12:3333/changedevice2", {
+        fetch("http://192.168.1.28:3333/changedevice2", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -227,7 +227,7 @@ function State({ route }) {
       }
     } else if (message.slice(message.indexOf("RELAY_0") + 9, message.indexOf(',"RELAY_1')) == "false") {
       if (firstDevice[0] && firstDevice[0].state == "on") {
-        fetch("http://192.168.1.12:3333/changedevice2", {
+        fetch("http://192.168.1.28:3333/changedevice2", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -265,7 +265,7 @@ function State({ route }) {
     // Lấy dữ liệu từ thiết bị 1
     if (message.slice(message.indexOf("RELAY_1") + 9, message.indexOf("}")) == "true") {
       if (secondDevice[0] && secondDevice[0].state == "off") {
-        fetch("http://192.168.1.12:3333/changedevice2", {
+        fetch("http://192.168.1.28:3333/changedevice2", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -300,7 +300,7 @@ function State({ route }) {
       }
     } else if (message.slice(message.indexOf("RELAY_1") + 9, message.indexOf("}")) == "false") {
       if (secondDevice[0] && secondDevice[0].state == "on") {
-        fetch("http://192.168.1.12:3333/changedevice2", {
+        fetch("http://192.168.1.28:3333/changedevice2", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -338,7 +338,7 @@ function State({ route }) {
   }, [message]);
 
   const saveActivity = (deviceState) => {
-    fetch("http://192.168.1.12:3333/addactivity", {
+    fetch("http://192.168.1.28:3333/addactivity", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -377,7 +377,7 @@ function State({ route }) {
   };
 
   const changeStateDevice = (state) => {
-    fetch("http://192.168.1.12:3333/changedevice2", {
+    fetch("http://192.168.1.28:3333/changedevice2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -536,7 +536,7 @@ function Auto({ route }) {
   }, [device]);
 
   const changeSensorAuto = () => {
-    fetch("http://192.168.1.12:3333/changedevice2", {
+    fetch("http://192.168.1.28:3333/changedevice2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -581,7 +581,7 @@ function Auto({ route }) {
   };
 
   const activeTimeAuto = () => {
-    fetch("http://192.168.1.12:3333/changedevice2", {
+    fetch("http://192.168.1.28:3333/changedevice2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -625,7 +625,7 @@ function Auto({ route }) {
   };
 
   const activeSensorAuto = () => {
-    fetch("http://192.168.1.12:3333/changedevice2", {
+    fetch("http://192.168.1.28:3333/changedevice2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -669,7 +669,7 @@ function Auto({ route }) {
   };
 
   const changeTimeAuto = () => {
-    fetch("http://192.168.1.12:3333/changedevice2", {
+    fetch("http://192.168.1.28:3333/changedevice2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -940,7 +940,7 @@ export default function DeviceDetail(props) {
   }, [props.name]);
 
   const handleChangeDevice = () => {
-    fetch("http://192.168.1.12:3333/changedevice1", {
+    fetch("http://192.168.1.28:3333/changedevice1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -979,7 +979,7 @@ export default function DeviceDetail(props) {
 
   const [notification, setNotification] = useState(false);
   const deleteDevice = () => {
-    fetch("http://192.168.1.12:3333/deletedevice", {
+    fetch("http://192.168.1.28:3333/deletedevice", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

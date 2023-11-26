@@ -46,7 +46,7 @@ export default function RoomItem(props) {
   };
 
   const handleAddRoom = () => {
-    fetch("http://192.168.1.12:3333/addroom", {
+    fetch("http://192.168.1.28:3333/addroom", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export default function RoomItem(props) {
   };
 
   const handleChangeRoom = () => {
-    fetch("http://192.168.1.12:3333/changeroom", {
+    fetch("http://192.168.1.28:3333/changeroom", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -120,7 +120,7 @@ export default function RoomItem(props) {
   };
 
   const deleteRoom = () => {
-    fetch("http://192.168.1.12:3333/deleteroom", {
+    fetch("http://192.168.1.28:3333/deleteroom", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

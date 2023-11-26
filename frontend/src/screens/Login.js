@@ -18,7 +18,7 @@ const Login = ({ navigation }) => {
       setEroormsg("All fields are required");
       return;
     } else {
-      fetch("http://192.168.1.12:3333/signin", {
+      fetch("http://192.168.1.28:3333/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

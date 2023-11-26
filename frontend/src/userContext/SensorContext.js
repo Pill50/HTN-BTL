@@ -6,7 +6,7 @@ export function SensorContext({ children }) {
   const { userDbId } = React.useContext(AuthenticationAPI);
   const getSensors = () => {
     if (userDbId != "") {
-      fetch("http://192.168.1.12:3333/getsensors", {
+      fetch("http://192.168.1.28:3333/getsensors", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

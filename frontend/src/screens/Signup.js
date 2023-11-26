@@ -24,7 +24,7 @@ const SignUp = ({ navigation }) => {
         setEroormsg("Password and Confirm Password must be same");
         return;
       } else {
-        fetch("http://192.168.1.12:3333/signup", {
+        fetch("http://192.168.1.28:3333/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

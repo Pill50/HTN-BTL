@@ -20,7 +20,7 @@ export default function DeviceItem(props) {
   const [deviceTyp, setDeviceTyp] = useState();
   const [relay, setRelay] = useState();
   const handleAddDeivce = () => {
-    fetch("http://192.168.1.12:3333/adddevice", {
+    fetch("http://192.168.1.28:3333/adddevice", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
